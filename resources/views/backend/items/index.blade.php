@@ -2,8 +2,8 @@
 @section('content')
 
 	<div class="container-fluid">
-		<h2 class="d-inline-block">Item List (Table)</h2>
-		<a href="{{route('items.create')}}" class="btn btn-success float-right">Add Item</a>
+		<h2 class="d-inline-block py-3">Item List (Table)</h2>
+		<a href="{{route('items.create')}}" class="btn btn-success float-right my-3">Add Item</a>
 		
 			<table class="table">
 				<thead>
