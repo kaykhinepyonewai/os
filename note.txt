@@ -1,0 +1,25 @@
+Item Manage
+
+----------
+	-create resource route
+		in route
+
+	-create controller (--resosurce)
+		-php artisan make:controller ItemController --resource
+
+	-show route list (route:list)
+		-php artisan route:list
+
+	-create blades (4 for Get Methods)
+
+	-call specified view from method
+	
+	-use store method (form action)
+		-dd(request)
+		-Validation
+		-if include image, upload
+		-data insert
+		-redirect ->(index)
+	-show in database
+
+
