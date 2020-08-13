@@ -23,3 +23,23 @@ Item Manage
 	-show in database
 
 
+13-08-2020
+
+-----------
+
+- List , Edit, Delete---Brand only
+- Validation Error, Delete Image if upload new image
+
+
+
+UI
+---
+
+- Item Filter page
+- item detail page
+- checkout page
+- profile page
+- login page
+- register page
+
+

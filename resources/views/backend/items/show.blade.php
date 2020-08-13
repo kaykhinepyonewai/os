@@ -28,6 +28,17 @@
 					<div class="col-md-4">Descrption</div>
 					<div class="col-md-4">{{$item->description}}</div>
 				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-4">Product Brand</div>
+					<div class="col-md-4">{{$item->brand->name}}</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-4">Product Sub Category</div>
+					<div class="col-md-4">{{$item->subcategory->name}}</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>

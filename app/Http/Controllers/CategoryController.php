@@ -45,7 +45,7 @@ class CategoryController extends Controller
 
        $imageName = time().'.'.$request->photo->extension();
        $request->photo->move(public_path('backend/categoryimg'),$imageName);
-       $myfile = 'backend/categoryimg'.$imageName;
+       $myfile = 'backend/categoryimg/'.$imageName;
 
 
 

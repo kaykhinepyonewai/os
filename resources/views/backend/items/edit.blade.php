@@ -8,7 +8,7 @@
 	<div class="row">
 		<div class="offset-1 col-md-9">
 
-			@if ($errors->any())
+			{{-- @if ($errors->any())
 			<div class="alert alert-danger">
 				<ul>
 					@foreach ($errors->all() as $error)
@@ -16,7 +16,7 @@
 					@endforeach
 				</ul>
 			</div>
-			@endif
+			@endif --}}
 
 			
 
@@ -28,23 +28,39 @@
 				<div class="form-group row">
 
 					<label for="code" class="col-md-2">CodeNo:</label>
-					<input type="text" id="code" value="{{$item->codeno}}"  name="codeno" class="form-control col-md-9" readonly="">
+					<input type="text" id="code" value="{{$item->codeno}}"  name="codeno" class="form-control col-md-9 {{ $errors->first('codeno') ? 'border-danger' : '' }}" readonly="">
+					@error('codeno')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
 
 				<div class="form-group row">
 
 					<label for="name" class="col-md-2">Name:</label>
-					<input type="text" id="name" value="{{$item->name}}"  name="name" class="form-control col-md-9">
+					<input type="text" id="name" value="{{$item->name}}"  name="name" class="form-control col-md-9 {{ $errors->first('name') ? 'border-danger' : '' }}">
+					@error('name')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
 
 				<div class="form-group row">
 					<label for="discount" class="col-md-2">Discount:</label>
-					<input type="number" id="discount" value="{{$item->discount}}"  name="discount" class="form-control col-md-9">
+					<input type="number" id="discount" value="{{$item->discount}}"  name="discount" class="form-control col-md-9 {{ $errors->first('discount') ? 'border-danger' : ''}}">
+					@error('discount')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
 
 				<div class="form-group row">
 					<label for="discount" class="col-md-2">Price:</label>
-					<input type="number" id="price" value="{{$item->price}}"  name="price" class="form-control col-md-9">
+					<input type="number" id="price" value="{{$item->price}}"  name="price" class="form-control col-md-9 {{ $errors->first('price') ? 'border-danger' : ''}}">
+					@error('price')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
 
 				<div class="form-group row">
@@ -90,7 +106,11 @@
 				
 				<div class="form-group row">
 					<label for="des" class="col-md-2">Description:</label><br>
-					<textarea name="description" class="form-control col-md-9" id="des">{{$item->description}}</textarea>
+					<textarea name="description" class="form-control col-md-9 {{ $errors->first('description') ? 'border-danger' : ''}}" id="des">{{$item->description}}</textarea>
+					@error('description')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
 				<div class="form-group row">
 				<div class="col-md-2"></div>

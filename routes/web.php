@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','BackendController@dashboard')->name('dashboard');
+Route::get('/','FrontendController@home')->name('homepage');
+
+Route::get('dashboard','BackendController@dashboard')->name('dashboard');
 
 
 Route::resource('items','ItemController');
@@ -25,6 +27,22 @@ Route::resource('categories','CategoryController');
 
 
 Route::resource('subcategories','SubCategoryController');
+
+Route::get('filteritem','FrontendController@item')->name('itempage');
+
+Route::get('login','FrontendController@login')->name('loginpage');
+
+Route::get('profile','FrontendController@profile')->name('profilepage');
+
+Route::get('register','FrontendController@register')->name('registerpage');
+
+Route::get('detail/{id}','FrontendController@detail')->name('detailpage');
+
+Route::get('checkout','FrontendController@checkout')->name('checkoutpage');
+
+
+
+
 
 
 

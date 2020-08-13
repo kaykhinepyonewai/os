@@ -8,7 +8,7 @@
 	<div class="row">
 		<div class="offset-1 col-md-9">
 
-			@if ($errors->any())
+			{{-- @if ($errors->any())
 			<div class="alert alert-danger">
 				<ul>
 					@foreach ($errors->all() as $error)
@@ -16,7 +16,7 @@
 					@endforeach
 				</ul>
 			</div>
-			@endif
+			@endif --}}
 
 			
 
@@ -27,25 +27,51 @@
 				<div class="form-group row">
 
 					<label for="code" class="col-md-2">CodeNo:</label>
-					<input type="text" id="code"  name="codeno" class="form-control col-md-9">
+					<input type="text" id="code"  name="codeno" class="form-control col-md-9 {{ $errors->first('codeno') ? 'border-danger' : '' }}">
+
+					@error('codeno')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
+
 				<div class="form-group row">
 
 					<label for="name" class="col-md-2">Name:</label>
-					<input type="text" id="name"  name="name" class="form-control col-md-9">
+					<input type="text" id="name"  name="name" class="form-control col-md-9 {{ $errors->first('name') ? 'border-danger' : '' }}">
+					@error('name')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
+
 				<div class="form-group row">
 					<label for="discount" class="col-md-2">Discount:</label>
-					<input type="number" id="discount"  name="discount" class="form-control col-md-9">
+					<input type="number" id="discount"  name="discount" class="form-control col-md-9 {{ $errors->first('discount') ? 'border-danger' : ''}}">
+					@error('discount')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
+
 				<div class="form-group row">
 					<label for="discount" class="col-md-2">Price:</label>
-					<input type="number" id="price"  name="price" class="form-control col-md-9">
+					<input type="number" id="price"  name="price" class="form-control col-md-9 {{ $errors->first('price') ? 'border-danger' : ''}}">
+					@error('price')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
+
 				<div class="form-group row">
 					<label for="image" class="col-md-2">Photo:</label>
-					<input type="file" name="photo" class="form-control-file col-md-9">
+					<input type="file" name="photo" class="form-control-file col-md-9 {{ $errors->first('price') ? 'border border-danger' : ''}}">
+					@error('photo')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
+
 				<div class="form-group row">
 					<label for="brand" class="col-md-2">Brand:</label>
 					<select name="brand" id="brand" class="form-control form-check col-md-9">
@@ -56,9 +82,10 @@
 						</optgroup>
 					</select>
 				</div>
+
 				<div class="form-group row">
 					<label for="subcate" class="col-md-2">SubCategory:</label>
-					<select name="subcategory" id="subcate" class="form-control form-check col-md-9">
+					<select name="subcategory" id="subcate" class="form-control form-check col-md-9 {{ $errors->first('subcategory') ? ' border-danger' : ''}}">
 						<optgroup label="Choose SubCategory">
 						@foreach($subcategories as $subcategory)
 						<option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
@@ -66,7 +93,14 @@
 						</optgroup>
 
 					</select>
+
+					@error('subcategory')
+					
+					<div class="alert alert-danger offset-2 col-md-9 form-control">{{ $message }}</div>
+					@enderror
 				</div>
+
+
 				<div class="form-group row">
 					<label for="des" class="col-md-2">Description:</label><br>
 					<textarea name="description" class="form-control col-md-9" id="des"></textarea>

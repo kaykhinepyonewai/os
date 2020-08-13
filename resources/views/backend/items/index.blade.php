@@ -55,7 +55,7 @@
   <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title home animate">Item Detail</h3>
+        <h3 class="modal-title">Item Detail</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -65,7 +65,7 @@
           <div class="col-md-5">
              <img src="" class="img-fluid w-75 h-50">
           </div>
-          <div class="col-md-7 home text-justify">
+          <div class="col-md-7 text-justify">
             <p>Price: <span class="pprice d-inline-block"> MMK</span></p>
         
             <p>Description:  <sapn class="pdes d-inline-block"></span></p>
@@ -102,9 +102,6 @@
 			$('.modal-title').text(name);
 			$('.pdes').text(desc);
 
-
-
-			// $('#mymodal').modal('show');
 		})
 	})
 </script>
