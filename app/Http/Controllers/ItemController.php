@@ -10,11 +10,17 @@ use App\Subcategory;
 
 class ItemController extends Controller
 {
+    //  public function __construct()
+    // {
+    //     $this->middleware('auth');  //->except('index'),, ->only('show')
+    // }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         $items = Item::all();
@@ -186,6 +192,7 @@ class ItemController extends Controller
     {
         $item = Item::find($id);
         $item->delete();
+         unlink($item->photo);
 
         //redirect
         return redirect()->route('items.index');

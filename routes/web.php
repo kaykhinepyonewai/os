@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','FrontendController@home')->name('homepage');
 
+
+
+//-------------------------------------------------------
+
+//Backend
+
+
+Route::middleware(['auth'])->group(function () 
+{
 Route::get('dashboard','BackendController@dashboard')->name('dashboard');
 
 
@@ -27,6 +36,14 @@ Route::resource('categories','CategoryController');
 
 
 Route::resource('subcategories','SubCategoryController');
+
+Route::resource('orders','OrderController');
+
+});
+
+// --------------------------------------------------
+
+
 
 Route::get('filteritem','FrontendController@item')->name('itempage');
 
@@ -47,3 +64,8 @@ Route::get('checkout','FrontendController@checkout')->name('checkoutpage');
 
 
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

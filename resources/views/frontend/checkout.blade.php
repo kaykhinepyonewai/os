@@ -11,6 +11,7 @@
                 <thead class="home">
                   <tr>
                     <th>No.</th>
+                    <th>Photo</th>
                     <th>Item Name:</th>
                     <th>Item Price:</th>
                     <th>Qty</th>
@@ -19,28 +20,25 @@
                 </thead>
 
                 <tbody id="tbody" class="home">
-                	<tr>
-                		<td>1</td>
-                		<td>Wedding Dress</td>
-                		<td>1000000MMK</td>
-                		<td>1</td>
-                		<td>100000MMK</td>
-                	</tr>
-                	<tr>
-                		<td colspan="4" class="float-right">Total</td>
-                	</tr>
-
+                
                 </tbody>
 
             </table>
 
             <div class="form-group">
-              <textarea class="form-control home notes" placeholder="Notes"></textarea>
+              <textarea class="form-control home notes" i placeholder="Notes"></textarea>
               <input type="hidden" name="" class="total">
             </div>
 
-            <a href="#" class="btn btn-outline-light text-dark home cont py-5">Continues Shopping</a>
-            <a href="#" class="btn btn-outline-light text-dark home cont py-5">Order Now</a>
+            
+            <a href="{{route('itempage')}}" class="btn btn-outline-light text-dark home cont py-5">Continues Shopping</a>
+
+            @auth
+            <a href="" class="btn btn-outline-light text-dark home py-5 buy_now">Order Now</a>
+            
+            @else
+            <a href="{{route('login')}}" class="btn btn-outline-light text-dark home py-5 buy_now">Order Now To Login</a>
+            @endauth
            
            
           </div>
@@ -49,4 +47,9 @@
 </div>
 
 
+@endsection
+
+
+@section('script')
+  <script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script>
 @endsection

@@ -21,4 +21,14 @@ class Item extends Model
     {
     	return $this->belongsTo('App\Subcategory');
     }
+
+
+      public function orders($value='')     //appear object ->belongsTo
+    {
+        return $this->belongsToMany('App\Order','order_detail')
+                    ->withPivot('qty')
+                    ->withTimestamps();
+
+
+    }
 }

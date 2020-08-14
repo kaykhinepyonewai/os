@@ -41,7 +41,8 @@
               </div>
               <div class="card-footer">
                 {{-- <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small> --}}
-                <a href="" class="btn btn-info">Add To Cart</a>
+                <a href="" data-id="{{$item->id}}" data-name="{{$item->name}}" data-photo="{{asset($item->photo)}}" data-price="{{$item->price}}" data-discount="{{$item->discount}}" class="btn btn-info addTo1">Add To Cart</a>
+                
                 <a href="{{route('detailpage',$item->id)}}" class="btn btn-dark">Detail</a>
               </div>
             </div>
@@ -53,4 +54,9 @@
        </div>
 
 
+@endsection
+
+
+@section('script')
+  <script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script>
 @endsection
