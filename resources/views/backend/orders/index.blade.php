@@ -2,8 +2,8 @@
 @section('content')
 
 	<div class="container-fluid">
-		<h2 class="d-inline-block py-3">Order List (Table)</h2>
-		<a href="{{route('items.create')}}" class="btn btn-success float-right my-3">Add Item</a>
+		<h2 class=" py-3 text-center">Order List (Table)</h2>
+		{{-- <a href="{{route('items.create')}}" class="btn btn-success float-right my-3">Add Item</a> --}}
 		
 			<table class="table">
 				<thead>
@@ -23,21 +23,14 @@
 					<tr>
 						<td>{{$i++}}</td>
 						<td>{{$order->voucherno}}
-							{{-- <a href="{{route('items.show',$item->id)}}">
-							<span class="badge badge-primary badge-pill">More</span>
-							</a> --}}
-							{{-- <a href="#" class="box" data-target="#mymodal"  data-toggle="modal" data-name="{{$item->name}}" data-photo="{{asset($order->photo)}}" data-price="{{$item->price}}" data-desc="{{$item->description}}">
-							<span class="badge badge-primary badge-pill">Model</span>
-							</a> --}}
+							
 
 						</td>
 						<td>{{$order->orderdate}}</td>
 						<td>{{$order->note}}</td>
 							<td>{{$order->total}}</td>
 						<td>
-							{{-- <a href="{{route('orders.update',$order->id)}}">
-							<button class="btn btn-outline-success">Confirm</button>
-							</a> --}}
+							
 							<form method="POST" action="{{route('orders.update',$order->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
 								@csrf
 								@method('PUT')

@@ -24,7 +24,7 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-        // $orders = Order::where('status',1)->get();
+        $orders = Order::where('status',0)->get();
         // $orders->where('status','=',0)->get();
         return view('backend.orders.index',compact('orders'));
     }

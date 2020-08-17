@@ -12,9 +12,7 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          {{-- <div class="col-lg-5 d-none d-lg-block">
-          	<img src="backend/loginimg/register.jpg" class="img-fluid w-100 h-100">
-          </div> --}}
+          
           <div class="col-lg-3"></div>
           <div class="col-lg-7">
             <div class="p-5">
@@ -57,15 +55,15 @@
                
                 </div> --}}
 
-                <div class="form-group">
-                  <input type="number" name="user_phone" value="{{Auth::user()->role}}" class="form-control form-control-user" placeholder="Phone Number">
+              {{--   <div class="form-group">
+                  <input type="text" name="user_phone" value="{{Auth::user()->password}}" class="form-control form-control-user" placeholder="Role Number">
                
-                </div>
+                </div> --}}
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                   <textarea class="form-control" placeholder="Address" name="user_address"></textarea>
                
-                </div>
+                </div> --}}
 
 
                 <input type="submit" class="btn btn-primary btn-user btn-block" value="Change">
@@ -77,12 +75,12 @@
 
 
 
-              <div class="text-center">
+             {{--  <div class="text-center">
                 <a class="small" href="forgot-password.html">Forgot Password?</a>
               </div>
               <div class="text-center">
                 <a class="small" href="login.html">Already have an account? Login!</a>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>

@@ -86,7 +86,7 @@
             var html = '';
             $.each(res,function(i,v)
             {
-                var url= 'detailpage/'+v.id;
+                var url= 'detail/'+v.id;
                 html +=`
 
                 

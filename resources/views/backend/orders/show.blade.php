@@ -2,14 +2,72 @@
 @section('content')
 
 	<div class="container-fluid">
-		<h2 class="d-inline-block py-3">Order Detail (Table)</h2>
-		<p>Voucherno: {{$order->voucherno}}</p>
+		{{-- <h2 class="d-inline-block py-3">Order Detail (Table)</h2> --}}
+		{{-- <p>Voucherno: {{$order->voucherno}}</p> --}}
 		
 			<table class="table">
 				<thead>
 					<tr>
+						<th colspan="6" class="text-center">
+							<h2>KOnlineShop</h2>
+							<h5>Chan Mya Thar Si TownShip</h5>
+							<h5>Mandalay</h5>
+							<h5 class="pt-4">Tel: 09797363511</h5>
+						</th>
+					</tr>
+
+					 <tr>
+					 	<th colspan="4">
+					 		<div class="row">
+
+					 			<div class="col-md-3">
+					 				<p>Cahser</p>
+					 			</div>
+
+					 			<div class="col-md-3">
+					 				<p>: &nbsp;&nbsp;&nbsp; {{Auth::user()->name}}</p>
+					 			</div>
+
+					 			<div class="col-md-3">
+					 				<p>Date</p>
+					 			</div>
+
+					 			<div class="col-md-3">
+					 				
+					 					
+					 				<p>: &nbsp;&nbsp;&nbsp; {{$order->orderdate}}</p>
+
+					 					
+					 				
+					 			</div>
+
+					 			<div class="col-md-3">
+					 				<p>VoucherNo</p>
+					 			</div>
+
+					 			<div class="col-md-3">
+					 				
+					 					<p>: &nbsp;&nbsp;&nbsp; {{$order->voucherno}}</p>
+
+					 			</div>
+
+               <div class="col-md-3">
+                <p>Time</p>
+              </div>
+
+              <div class="col-md-3">
+               
+                  <p>: &nbsp;&nbsp;&nbsp;  {{$order->created_at}}</p>
+
+                  
+              </div>
+
+            </div>
+          </th>
+        </tr>
+					<tr>
 					<th>No.</th>
-				{{-- 	<th>Voucher NO</th> --}}
+			
 					<th>Name:</th>
 
 					<th>Price:</th>
@@ -28,32 +86,24 @@
 						<td>{{$i++}}</td>
 
 						<td>{{$item->name}}
-							{{-- <a href="{{route('items.show',$item->id)}}">
-							<span class="badge badge-primary badge-pill">More</span>
-							</a> --}}
-							{{-- <a href="#" class="box" data-target="#mymodal"  data-toggle="modal" data-name="{{$item->name}}" data-photo="{{asset($order->photo)}}" data-price="{{$item->price}}" data-desc="{{$item->description}}">
-							<span class="badge badge-primary badge-pill">Model</span>
-							</a> --}}
+							
 
 						</td>
-						{{-- <td>{{$item->orderdate}}</td> --}}
+						
 						<td>{{$item->price}}</td>
 						<td>{{$item->discount}}</td>
-						{{-- <td><img src="{{asset($items->price)}}"></td> --}}
-						{{-- <td>{{$item->orders->order_detail}}</td> --}}
-						{{-- <td>{{$item->orders->order_detail->qty}}</td> --}}
-
-					{{-- 	<td>{{$item->pivot->order_detail}}</td> --}}
-					{{-- 		<td>{{$item->total}}</td> --}}
+						
 						<td>{{$item->pivot->qty}}</td>
 						<td>{{$item->pivot->qty*$item->price}}</td>
 
 							
 					</tr>
+						@endforeach
 					<tr>
-						{{-- <td class="">Total</td> --}}
+						<td colspan="5" class="text-right">Total</td>
+						<td>{{$order->total}}</td>
 					</tr>
-					@endforeach
+				
 				</tbody>
 			</table>
 		
