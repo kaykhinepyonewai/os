@@ -3,7 +3,7 @@
 
 	<div class="container-fluid">
 		<h2 class="d-inline-block py-3">Order Detail (Table)</h2>
-		<a href="{{route('items.create')}}" class="btn btn-success float-right my-3">Add Item</a>
+		<p>Voucherno: {{$order->voucherno}}</p>
 		
 			<table class="table">
 				<thead>
@@ -22,7 +22,7 @@
 					@php
 						$i=1;
 					@endphp
-					@foreach($orders->items as $item)
+					@foreach($order->items as $item)
 
 					<tr>
 						<td>{{$i++}}</td>
