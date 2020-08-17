@@ -16,7 +16,7 @@ class UserTableSeeder extends Seeder
        $user = new User;
        $user->name = 'Admin';
        $user->email = 'admin@mail.com';
-       $user->password = Hash::make($data['123456789']);
+       $user->password = Hash::make('123456789');
 
        $user->save();
        $user->assignRole('admin');
