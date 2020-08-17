@@ -14,6 +14,13 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct($value='')
+    {
+        $this->middleware('role:admin')->except('store');
+        $this->middleware('role:customer')->only('store');
+    }
+
     public function index()
     {
         $orders = Order::all();

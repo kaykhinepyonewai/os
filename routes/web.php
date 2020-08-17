@@ -60,6 +60,8 @@ Route::get('checkout','FrontendController@checkout')->name('checkoutpage');
 Route::post('/getitems','FrontendController@getItems')->name('getitems');
 
 
+Route::resource('orders','OrderController');
+
 
 Auth::routes();
 
