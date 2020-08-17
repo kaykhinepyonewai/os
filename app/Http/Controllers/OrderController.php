@@ -82,10 +82,10 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $items = Item::all();;
+        $orders = Order::find($id);;
         // dd($items);
         // $order = Order::all();
-        return view('backend.orders.show',compact('items'));
+        return view('backend.orders.show',compact('orders'));
     }
 
     /**
