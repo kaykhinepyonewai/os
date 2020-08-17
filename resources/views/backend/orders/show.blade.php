@@ -34,6 +34,7 @@
 						</td>
 						{{-- <td>{{$item->orderdate}}</td> --}}
 						<td>{{$item->price}}</td>
+						<td></td>
 						{{-- <td>{{$item->orders->order_detail->qty}}</td> --}}
 
 					{{-- 	<td>{{$item->pivot->order_detail}}</td> --}}

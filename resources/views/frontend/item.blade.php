@@ -8,7 +8,7 @@
 @section('content')
 
 <div class="col-lg-9">
-	<h2 class="py-5">Item Page Filter By Brand and SubCategory</h2>
+	<h2 class="py-5">Item Page Filter By Category Name </h2>
 
 
  {{-- {
