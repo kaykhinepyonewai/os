@@ -7,7 +7,7 @@
 
 
 	<div class="container">
-
+    {{-- {{Auth::user()}} --}}
     <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
@@ -37,14 +37,14 @@
 
 
                 <div class="form-group">
-                  <input type="text" name="user_name" value="" class="form-control form-control-user" placeholder="Name">
+                  <input type="text" name="user_name" value="{{Auth::user()->name}}" class="form-control form-control-user" placeholder="Name">
                 
 
                 </div>
 
                
                 <div class="form-group">
-                  <input type="email" name="user_email" value="" class="form-control form-control-user" placeholder="Email Address">
+                  <input type="email" name="user_email" value="{{Auth::user()->email}}" class="form-control form-control-user" placeholder="Email Address">
                 
                 </div>
 
@@ -58,7 +58,7 @@
                 </div> --}}
 
                 <div class="form-group">
-                  <input type="number" name="user_phone" value="" class="form-control form-control-user" placeholder="Phone Number">
+                  <input type="number" name="user_phone" value="{{Auth::user()->role}}" class="form-control form-control-user" placeholder="Phone Number">
                
                 </div>
 

@@ -14,23 +14,33 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>1</td>
-				<td>Category One
-					<a href="{{route('categories.show',1)}}">
+			
+				@php
+					$i=1;
+				@endphp
+				@foreach($categories as $category)
+				<tr>
+				<td>{{$i++}}</td>
+				<td>{{$category->name}}
+					<a href="{{route('categories.show',$category->id)}}">
 						<span class="badge badge-primary badge-pill">More</span>
 					</a>
 				</td>
 				<td>
-					<img src="{{asset('backend/categoryimg/9c90d24c01678aa61754cfdc3c124eed.jpg')}}" class="w-25 h-25">
+					<img src="{{asset($category->photo)}}" class="w-25 h-25">
 				</td>
 				<td>
-					<a href="{{route('categories.edit',1)}}">
+					<a href="{{route('categories.edit',$category->id)}}">
 						<button class="btn btn-danger">Edit</button>
 					</a>
-					<button class="btn btn-dark">Delete</button>
+					<form method="POST" action="{{route('categories.destroy',$category->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+								@csrf
+								@method('DELETE')
+								<input type="submit" name="btnsubmit" value="Delete" class="btn btn-dark btn-sm">
+					</form>
 				</td>
 			</tr>
+			@endforeach
 		</tbody>
 	</table>
 </div>

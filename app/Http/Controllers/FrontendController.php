@@ -11,16 +11,18 @@ class FrontendController extends Controller
 {
    public function home($value='')
    {
-   	$items = Item::all();
+   	// $items = Item::all();
+      $items = Item::orderBy('id','desc')->take(6)->get();
    	// dd($items);
    	return view('frontend.home',compact('items'));
    }
 
    public function item($value='')
    {
-   	$items = Item::orderBy('id','desc')->take(6)->get();
+   	// $items = Item::orderBy('id','desc')->take(6)->get();
+      $subcategories =Subcategory::orderBy('id','desc')->take(3)->get();
    	// dd($items);
-   	return view('frontend.item',compact('items'));
+   	return view('frontend.item',compact('subcategories'));
    }
 
 
@@ -61,4 +63,24 @@ class FrontendController extends Controller
    	// dd($items);
    	return view('frontend.checkout');
    }
+  
+
+
+     // Ajax 
+    public function getItems(Request $request)
+   {
+
+      $sid = $request->sid;      
+      if ($sid == 0) {
+         $items = Item::all();
+      }
+      else{
+         $items = Subcategory::find($sid)->items;
+      } 
+      
+      
+      return $items;
+   }
+
+
 }

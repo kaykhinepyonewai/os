@@ -125,6 +125,7 @@ class BrandController extends Controller
     {
         $brand = Brand::find($id);
         $brand->delete();
+        unlink($brand->photo);
 
         //redirect
         return redirect()->route('brands.index');

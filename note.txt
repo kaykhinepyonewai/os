@@ -36,12 +36,34 @@ Item Manage
 UI
 ---
 
-- Item Filter page
+- Item Filter page (data binding)
 - item detail page
 - checkout page
-- profile page
-- login page
-- register page
+- profile page  (link / retrieve)
+- login page   (used already)
+- register page (used already)
+-auth (multi role)
 ------
+
+
+Backend
+--------
+
+-Order Retrieve
+
+	- (backend/orders)
+	- create view (index.blade.php)
+	- show table (order list)
+	- OrderController / index
+
+- RUD (category, subcategory)
+
+
+
+14-08-2020
+
+	Frontend
+
+	
 
 

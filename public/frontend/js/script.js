@@ -360,6 +360,8 @@ $(document).ready(function()
 
 		// For Buy Now
 
+
+
 		$('.buy_now').on('click',function()
 		{
 			var notes = $('.notes').val();
@@ -369,6 +371,8 @@ $(document).ready(function()
 			if (itemString) {
 				// itemArry = JSON.parse(itemString);
 
+
+				// Ajax
 				$.post('/orders',{item_data:itemString,notes:notes},function(response)   //  /orders---url
 				{
 					if (response) 

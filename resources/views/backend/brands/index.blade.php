@@ -26,13 +26,13 @@
 						<td><img src="{{asset($brand->photo)}}" class="" style="width: 200px; height: 200px"></td>
 						<td>
 							<a href="{{route('brands.edit',$brand->id)}}">
-							<button class="btn btn-outline-success">Edit</button>
+							<button class="btn btn-outline-success btn-sm">Edit</button>
 							</a>
 							
 							<form method="POST" action="{{route('brands.destroy',$brand->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
 								@csrf
 								@method('DELETE')
-								<input type="submit" name="btnsubmit" value="Delete" class="btn btn-dark">
+								<input type="submit" name="btnsubmit" value="Delete" class="btn btn-dark btn-sm">
 							</form>
 						
 					</tr>

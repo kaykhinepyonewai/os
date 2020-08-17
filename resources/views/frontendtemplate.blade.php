@@ -75,6 +75,13 @@
               {{ __('Logout') }}
             </a>
 
+             <a class="dropdown-item" href="{{ route('profilepage') }}"
+            >
+              {{ __('Profile') }}
+            </a>
+
+           {{--  <a href="{{route('profile')}}">Profile</a> --}}
+
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
             </form>
@@ -93,16 +100,7 @@
 
     <div class="row">
 
-      <div class="col-lg-3">
-
-        <h1 class="my-4">Shop Name</h1>
-        <div class="list-group">
-          <a href="{{route('itempage')}}" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
-        </div>
-
-      </div>
+     @yield('sidebar')
       <!-- /.col-lg-3 -->
 
      @yield('content')

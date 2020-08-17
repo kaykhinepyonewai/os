@@ -10,9 +10,11 @@ class Order extends Model
         'voucherno', 'orderdate', 'status', 'note', 'total', 'user_id'
     ];
 
+
+
       public function items($value='')     //appear object ->belongsTo
     {
-    	return $this->belongsToMany('App\Item','order_detail')
+    	return $this->belongsToMany('\App\Item','order_detail')
     				->withPivot('qty')
     				->withTimestamps();
 

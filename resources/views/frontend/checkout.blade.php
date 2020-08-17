@@ -33,12 +33,12 @@
             
             <a href="{{route('itempage')}}" class="btn btn-outline-light text-dark home cont py-5">Continues Shopping</a>
 
-            @auth
+            @role('customer')
             <a href="" class="btn btn-outline-light text-dark home py-5 buy_now">Order Now</a>
             
             @else
             <a href="{{route('login')}}" class="btn btn-outline-light text-dark home py-5 buy_now">Order Now To Login</a>
-            @endauth
+            @endrole
            
            
           </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use App\Item;
 use Illuminate\Support\Facades\Auth;;
 
 class OrderController extends Controller
@@ -15,7 +16,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::all();
+        // $orders = Order::where('status',1)->get();
+        // $orders->where('status','=',0)->get();
+        return view('backend.orders.index',compact('orders'));
     }
 
     /**
@@ -71,7 +75,10 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $items = Item::all();;
+        // dd($items);
+        // $order = Order::all();
+        return view('backend.orders.show',compact('items'));
     }
 
     /**
@@ -94,7 +101,13 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+          $order = Order::find($id);
+          $order->status= $request->status;
+            $order->save();
+
+        return redirect()->route('orders.index');
+
+
     }
 
     /**

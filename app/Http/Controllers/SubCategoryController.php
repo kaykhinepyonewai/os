@@ -15,7 +15,19 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.subcategories.index');
+        $subcategories = Subcategory::all();
+        // $category = Category::where('id',$subcategories->category_id)->get();
+
+        $category = Category::all();
+
+       //  $category = $this->Subcategory
+       // ->join('Category', 'Category.id', '=', 'Subcategory.category_id')
+       // ->where('Subcategory.id', '=', '5')
+       // ->select('Subcategory.*', 'Category.name as categoryname')
+       // ->first();
+
+        
+        return view('backend.subcategories.index',compact('subcategories','category'));
     }
 
     /**
@@ -73,7 +85,10 @@ class SubCategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('backend.subcategories.edit');
+
+         $categories = Category::all();
+         $subcategory = Subcategory::find($id);
+        return view('backend.subcategories.edit',compact('subcategory','categories'));
     }
 
     /**
@@ -85,7 +100,21 @@ class SubCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate(
+         [
+            'name'=>'required',
+            'category'=>'required'
+         ]
+       );
+      
+       $subcategory =  Subcategory::find($id);
+        // $brand = Brand::find($id);
+       $subcategory->name = $request->name;
+       $subcategory->category_id=$request->category;
+
+       $subcategory->save();
+
+       return redirect()->route('subcategories.index');
     }
 
     /**

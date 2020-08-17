@@ -22,7 +22,7 @@ Route::get('/','FrontendController@home')->name('homepage');
 //Backend
 
 
-Route::middleware(['auth'])->group(function () 
+Route::middleware(['role:admin'])->group(function () 
 {
 Route::get('dashboard','BackendController@dashboard')->name('dashboard');
 
@@ -57,12 +57,7 @@ Route::get('detail/{id}','FrontendController@detail')->name('detailpage');
 
 Route::get('checkout','FrontendController@checkout')->name('checkoutpage');
 
-
-
-
-
-
-
+Route::post('/getitems','FrontendController@getItems')->name('getitems');
 
 
 
