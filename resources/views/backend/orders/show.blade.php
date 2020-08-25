@@ -83,12 +83,10 @@
 					@foreach($order->items as $item)
 
 					<tr>
+
 						<td>{{$i++}}</td>
 
-						<td>{{$item->name}}
-							
-
-						</td>
+						<td>{{$item->name}}</td>
 						
 						<td>{{$item->price}}</td>
 						<td>{{$item->discount}}</td>

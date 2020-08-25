@@ -33,6 +33,7 @@
             
             <a href="{{route('itempage')}}" class="btn btn-outline-light text-dark home cont py-5">Continues Shopping</a>
 
+
             @role('customer')
             <a href="" class="btn btn-outline-light text-dark home py-5 buy_now">Order Now</a>
             

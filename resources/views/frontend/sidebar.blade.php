@@ -8,4 +8,12 @@
         @endforeach
         </div>
 
+       {{--  <h1 class="my-4">Brand Name</h1>
+        <div class="list-group">
+         
+          @foreach($brand as $brands)
+          <a href="#" class="list-group-item filter" data-id="{{$subcategory->id}}">{{$subcategory->name}}</a>
+        @endforeach
+        </div> --}}
+
       </div>

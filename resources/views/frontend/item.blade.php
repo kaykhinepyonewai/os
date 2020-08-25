@@ -8,11 +8,11 @@
 @section('content')
 
 <div class="col-lg-9">
-	<h2 class="py-5">Item Page Filter By Category Name </h2>
+  <h2 class="py-5">Item Page Filter By Category Name </h2>
 
 
  {{-- {
- 	 --}}
+   --}}
 {{-- <div class="row">
         @foreach($items as $item)
           <div class="col-lg-4 col-md-6 mb-4">
@@ -91,8 +91,8 @@
 
                 
                 <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                <a href="#"><img class="card-img-top img-fluid d-block" src="${v.photo}" alt="" style="width: 300px; height: 300px"></a>
+                <div class="card h-100 w-100">
+                <a href="#"><img class="card-img-top img-fluid d-block" src="${v.photo}" alt="" class="img-fluid"></a>
                 <div class="card-body">
                 <h4 class="card-title">
                 <a href="#">${v.name}</a>

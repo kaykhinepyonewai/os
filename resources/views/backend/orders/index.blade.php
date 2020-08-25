@@ -13,6 +13,7 @@
 					<th>Order Date:</th>
 					<th>Description:</th>
 					<th>Total</th>
+					<th>User Name</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -29,6 +30,7 @@
 						<td>{{$order->orderdate}}</td>
 						<td>{{$order->note}}</td>
 							<td>{{$order->total}}</td>
+							<td>{{$order->user->name}}</td>
 						<td>
 							
 							<form method="POST" action="{{route('orders.update',$order->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">

@@ -53,7 +53,7 @@ class ItemController extends Controller
         // Validation
 
         $request->validate([
-            'codeno' => 'required|min:4',
+            'codeno' => 'required|min:4',     //codeno--->inppute name
             'name' => 'required',
             'photo' => 'required',
             'price' => 'required',

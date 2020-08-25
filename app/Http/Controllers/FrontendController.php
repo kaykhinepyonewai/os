@@ -66,6 +66,23 @@ class FrontendController extends Controller
   
 
 
+   //   // Ajax 
+   //  public function getItems(Request $request)
+   // {
+
+   //    $sid = $request->sid;      
+   //    if ($sid == 0) {
+   //       $items = Item::all();
+   //    }
+   //    else{
+   //       $items = Subcategory::find($sid)->items;
+   //    } 
+      
+      
+   //    return $items;
+   // }
+
+
      // Ajax 
     public function getItems(Request $request)
    {
@@ -81,6 +98,5 @@ class FrontendController extends Controller
       
       return $items;
    }
-
 
 }
